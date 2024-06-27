@@ -3,6 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import RootView from '../views/routing/RootView';
 import PublicView from '../views/routing/PublicView';
 import PrivateView from '../views/routing/PrivateView';
+import LoginView from '../views/LoginView';
 
 // 2 Tipos de rutas: Públicas y Privadas
 export const router = createBrowserRouter([
@@ -25,7 +26,7 @@ export const router = createBrowserRouter([
           },
           {
             path: 'login',
-            element: <p>Login</p>,
+            element: <LoginView />,
           },
           {
             path: 'register',
