@@ -1,12 +1,20 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "firstname": "John",
       "lastname": "Doe",
       "username": "johndoe",
       "password": "Aa1234",
       "isAdmin": true
+    },
+    {
+      "id": "3765",
+      "firstname": "Gabi",
+      "lastname": "Azubel",
+      "username": "gabi",
+      "password": "1234Ag22@",
+      "isAdmin": false
     }
   ]
 }

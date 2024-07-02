@@ -5,6 +5,7 @@ import AuthViews from '../views/routing/AuthViews';
 import PrivateView from '../views/routing/PrivateView';
 import LoginView from '../views/LoginView';
 import HomeView from '../views/HomeView';
+import RegisterView from '../views/RegisterView';
 
 // 2 Tipos de rutas: Públicas y Privadas
 export const router = createBrowserRouter([
@@ -33,7 +34,7 @@ export const router = createBrowserRouter([
           },
           {
             path: 'register',
-            element: <p>Register</p>,
+            element: <RegisterView />,
           },
         ],
       },
