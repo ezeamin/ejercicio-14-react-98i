@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 
 import RootView from '../views/routing/RootView';
-import PublicView from '../views/routing/PublicView';
+import AuthViews from '../views/routing/AuthViews';
 import PrivateView from '../views/routing/PrivateView';
 import LoginView from '../views/LoginView';
 import HomeView from '../views/HomeView';
@@ -15,16 +15,18 @@ export const router = createBrowserRouter([
       // RUTAS PÚBLICAS
       {
         path: '',
-        element: <PublicView />,
+        element: <HomeView />,
+      },
+      {
+        path: 'detail/:id',
+        element: <p>Detalle</p>,
+      },
+      // RUTAS DE AUTENTICACION
+      // no deberían poder accederse estando logueados
+      {
+        path: '',
+        element: <AuthViews />,
         children: [
-          {
-            path: '',
-            element: <HomeView />,
-          },
-          {
-            path: 'detail/:id',
-            element: <p>Detalle</p>,
-          },
           {
             path: 'login',
             element: <LoginView />,
