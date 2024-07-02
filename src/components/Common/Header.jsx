@@ -1,6 +1,25 @@
 import { Link, NavLink } from 'react-router-dom';
+import { useSession } from '../../stores/useSession';
+import Swal from 'sweetalert2';
 
 const Header = () => {
+  const { user, isLoggedIn, logout } = useSession();
+
+  const handleLogout = async () => {
+    const action = await Swal.fire({
+      icon: 'question',
+      title: 'Atención',
+      text: '¿Está seguro que desea cerrar sesion?',
+      confirmButtonText: 'Si, salir',
+      cancelButtonText: 'No, cancelar',
+      showCancelButton: true,
+    });
+
+    if (action.isConfirmed) {
+      logout();
+    }
+  };
+
   return (
     <nav className='navbar navbar-expand-lg bg-body-tertiary'>
       <div className='container'>
@@ -30,26 +49,35 @@ const Header = () => {
                 Inicio
               </NavLink>
             </li>
-            <li className='nav-item'>
-              <NavLink
-                className={({ isActive }) => {
-                  return isActive ? 'nav-link active' : 'nav-link';
-                }}
-                to='/login'
-              >
-                Iniciar Sesión
-              </NavLink>
-            </li>
-            <li className='nav-item'>
-              <NavLink
-                className={({ isActive }) => {
-                  return isActive ? 'nav-link active' : 'nav-link';
-                }}
-                to='/admin'
-              >
-                Admin
-              </NavLink>
-            </li>
+            {!isLoggedIn && (
+              <li className='nav-item'>
+                <NavLink
+                  className={({ isActive }) => {
+                    return isActive ? 'nav-link active' : 'nav-link';
+                  }}
+                  to='/login'
+                >
+                  Iniciar Sesión
+                </NavLink>
+              </li>
+            )}
+            {isLoggedIn && user.isAdmin && (
+              <li className='nav-item'>
+                <NavLink
+                  className={({ isActive }) => {
+                    return isActive ? 'nav-link active' : 'nav-link';
+                  }}
+                  to='/admin'
+                >
+                  Admin
+                </NavLink>
+              </li>
+            )}
+            {isLoggedIn && (
+              <button className='btn btn-danger' onClick={handleLogout}>
+                Cerrar sesión
+              </button>
+            )}
           </ul>
         </div>
       </div>
