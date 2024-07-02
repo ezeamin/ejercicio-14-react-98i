@@ -4,6 +4,7 @@ import RootView from '../views/routing/RootView';
 import PublicView from '../views/routing/PublicView';
 import PrivateView from '../views/routing/PrivateView';
 import LoginView from '../views/LoginView';
+import HomeView from '../views/HomeView';
 
 // 2 Tipos de rutas: Públicas y Privadas
 export const router = createBrowserRouter([
@@ -18,7 +19,7 @@ export const router = createBrowserRouter([
         children: [
           {
             path: '',
-            element: <p>Home</p>,
+            element: <HomeView />,
           },
           {
             path: 'detail/:id',
