@@ -16,5 +16,13 @@
       "password": "1234Ag22@",
       "isAdmin": false
     }
+  ],
+  "blogs": [
+    {
+      "id": "161a",
+      "title": "Receta de Empanadas de brócoli",
+      "imageUrl": "https://cdn0.recetasgratis.net/es/posts/6/6/4/empanadas_de_brocoli_77466_600.webp",
+      "content": "Nada más práctico que las empanadas no solo porque se preparan fácilmente, sino también porque puedes rellenarlas casi con cualquier ingrediente, incluso puedes hacerlas saladas o dulces. Asimismo, resulta una manera ideal de incluir variedad de alimentos en la dieta de toda la familia, incluidos los más pequeños que, algunas veces, son más reacios a probar nuevos sabores.\n\nEn RecetasGratis, te enseñamos cómo hacer empanadas de brócoli. ¡A cocinar!"
+    }
   ]
 }

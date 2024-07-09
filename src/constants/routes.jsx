@@ -6,6 +6,7 @@ import PrivateView from '../views/routing/PrivateView';
 import LoginView from '../views/LoginView';
 import HomeView from '../views/HomeView';
 import RegisterView from '../views/RegisterView';
+import AdminView from '../views/AdminView';
 
 // 2 Tipos de rutas: Públicas y Privadas
 export const router = createBrowserRouter([
@@ -45,7 +46,7 @@ export const router = createBrowserRouter([
         children: [
           {
             path: 'admin',
-            element: <p>Admin</p>,
+            element: <AdminView />,
           },
         ],
       },
