@@ -16,5 +16,13 @@
       "password": "1234Ag22@",
       "isAdmin": false
     }
+  ],
+  "blogs": [
+    {
+      "id": "1f04",
+      "title": "Receta de Galletas de mantequilla caseras",
+      "imageUrl": "https://cdn0.recetasgratis.net/es/posts/3/5/5/galletas_de_mantequilla_caseras_31553_600.webp",
+      "content": "Las galletas de mantequilla son toda una delicia, además de fáciles de preparar. Puedes elaborarlas en casa y decorarlas con merengue, glasa real o fondant. Así mismo, son ideales para una fiesta de cumpleaños, baby shower, San Valentín o cualquier celebración.\n\nSi quieres aprender cómo hacer galletas de mantequilla caseras y fáciles, en RecetasGratis te proporcionamos gran variedad de recetas. ¡Vamos allá!"
+    }
   ]
 }
