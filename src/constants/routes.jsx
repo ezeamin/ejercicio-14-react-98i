@@ -7,6 +7,7 @@ import LoginView from '../views/LoginView';
 import HomeView from '../views/HomeView';
 import RegisterView from '../views/RegisterView';
 import AdminView from '../views/AdminView';
+import DetailView from '../views/DetailView';
 
 // 2 Tipos de rutas: Públicas y Privadas
 export const router = createBrowserRouter([
@@ -21,7 +22,7 @@ export const router = createBrowserRouter([
       },
       {
         path: 'detail/:id',
-        element: <p>Detalle</p>,
+        element: <DetailView />,
       },
       // RUTAS DE AUTENTICACION
       // no deberían poder accederse estando logueados

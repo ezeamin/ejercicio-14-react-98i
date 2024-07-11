@@ -25,6 +25,19 @@ export const getBlogsFn = async () => {
   return data;
 };
 
+export const getBlogFn = async (blogId) => {
+  const res = await fetch(`${BACKEND_URL}/blogs/${blogId}`);
+  const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(
+      'Ocurrió un error leyendo la entrada del blog seleccionado'
+    );
+  }
+
+  return data;
+};
+
 export const deleteBlogFn = async (blogId) => {
   const res = await fetch(`${BACKEND_URL}/blogs/${blogId}`, {
     method: 'DELETE',
