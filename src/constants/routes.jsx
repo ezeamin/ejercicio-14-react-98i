@@ -8,6 +8,7 @@ import HomeView from '../views/HomeView';
 import RegisterView from '../views/RegisterView';
 import AdminView from '../views/AdminView';
 import DetailView from '../views/DetailView';
+import Error404View from '../views/Error404View';
 
 // 2 Tipos de rutas: Públicas y Privadas
 export const router = createBrowserRouter([
@@ -50,6 +51,10 @@ export const router = createBrowserRouter([
             element: <AdminView />,
           },
         ],
+      },
+      {
+        path: '*',
+        element: <Error404View />,
       },
     ],
   },
