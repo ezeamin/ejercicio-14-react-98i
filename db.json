@@ -19,10 +19,16 @@
   ],
   "blogs": [
     {
-      "id": "1f04",
-      "title": "Receta de Galletas de mantequilla caseras",
+      "title": "Receta de Galletitas de mantequilla caseras",
       "imageUrl": "https://cdn0.recetasgratis.net/es/posts/3/5/5/galletas_de_mantequilla_caseras_31553_600.webp",
-      "content": "Las galletas de mantequilla son toda una delicia, además de fáciles de preparar. Puedes elaborarlas en casa y decorarlas con merengue, glasa real o fondant. Así mismo, son ideales para una fiesta de cumpleaños, baby shower, San Valentín o cualquier celebración.\n\nSi quieres aprender cómo hacer galletas de mantequilla caseras y fáciles, en RecetasGratis te proporcionamos gran variedad de recetas. ¡Vamos allá!"
+      "content": "Las galletas de mantequilla son toda una delicia, además de fáciles de preparar. Puedes elaborarlas en casa y decorarlas con merengue, glasa real o fondant. Así mismo, son ideales para una fiesta de cumpleaños, baby shower, San Valentín o cualquier celebración.\n\nSi quieres aprender cómo hacer galletas de mantequilla caseras y fáciles, en RecetasGratis te proporcionamos gran variedad de recetas. ¡Vamos allá!",
+      "id": "1f04"
+    },
+    {
+      "id": "5bdd",
+      "title": "Receta de Tarta de queso en freidora de aire",
+      "imageUrl": "https://cdn0.recetasgratis.net/es/posts/3/8/7/tarta_de_queso_en_freidora_de_aire_76783_600.webp",
+      "content": "La tarta de queso sencilla en freidora de aire es una elaboración exquisita y fácil de elaborar. Sin embargo, es importante coger bien los tiempos, ya que pueden variar según la freidora que tengas, debes ir probando. ¿Te animas a cocinar con nosotros?\n\nEn RecetasGratis te enseñamos cómo hacer tarta de queso en freidora de aire. ¡A cocinar!"
     }
   ]
 }

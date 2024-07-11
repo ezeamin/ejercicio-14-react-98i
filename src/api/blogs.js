@@ -36,3 +36,17 @@ export const deleteBlogFn = async (blogId) => {
     );
   }
 };
+
+export const putBlogFn = async ({ blogId, data }) => {
+  const res = await fetch(`${BACKEND_URL}/blogs/${blogId}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
+
+  if (!res.ok) {
+    throw new Error('Ocurrió un error intentando editar el blog seleccionado');
+  }
+};
