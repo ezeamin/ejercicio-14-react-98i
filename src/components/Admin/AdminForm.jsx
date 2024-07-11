@@ -4,7 +4,8 @@ import { toast } from 'sonner';
 
 import Input from '../ui/Input/Input';
 
-import { postBlogFn } from '../../api/blogs';
+import { postBlogFn, putBlogFn } from '../../api/blogs';
+import { useBlog } from '../../stores/useBlog';
 
 const AdminForm = () => {
   // ---------------------------------------------
@@ -16,6 +17,7 @@ const AdminForm = () => {
     handleSubmit: onSubmitRHF,
     reset,
     formState: { errors },
+    setValue,
   } = useForm();
 
   // ---------------------------------------------
@@ -24,6 +26,7 @@ const AdminForm = () => {
 
   const queryClient = useQueryClient();
 
+  // POST
   const { mutate: postBlog } = useMutation({
     mutationFn: postBlogFn,
     onSuccess: () => {
@@ -43,13 +46,53 @@ const AdminForm = () => {
     },
   });
 
+  // PUT
+  const { mutate: putBlog } = useMutation({
+    mutationFn: putBlogFn,
+    onSuccess: () => {
+      toast.dismiss();
+      toast.success('Entrada actualizada');
+
+      reset();
+      clearBlogToEdit();
+
+      // Avisarle a la tabla que se debe actualizar
+      queryClient.invalidateQueries({
+        queryKey: ['blogs'],
+      });
+    },
+    onError: (e) => {
+      toast.dismiss();
+      toast.error(e.message);
+    },
+  });
+
+  // ---------------------------------------------
+  // BLOG TO EDIT
+  // ---------------------------------------------
+
+  const { blogToEdit, clearBlogToEdit } = useBlog();
+
+  if (blogToEdit) {
+    setValue('title', blogToEdit.title);
+    setValue('imageUrl', blogToEdit.imageUrl);
+    setValue('content', blogToEdit.content);
+  }
+
   // ---------------------------------------------
   // HANDLERS
   // ---------------------------------------------
 
   const handleSubmit = (data) => {
     toast.loading('Guardando... Aguarde');
-    postBlog(data);
+
+    if (blogToEdit) putBlog({ blogId: blogToEdit.id, data });
+    else postBlog(data);
+  };
+
+  const handleCancelEdit = () => {
+    clearBlogToEdit();
+    reset();
   };
 
   // ---------------------------------------------
@@ -60,6 +103,12 @@ const AdminForm = () => {
     <form className='card p-3 bg-light' onSubmit={onSubmitRHF(handleSubmit)}>
       <h1>Crear nueva entrada</h1>
       <hr />
+      {blogToEdit && (
+        <div className='alert alert-warning'>
+          Atención: Estás modificando la entrada con título{' '}
+          <b>{blogToEdit.title}</b>
+        </div>
+      )}
       <Input
         className='mb-2'
         error={errors.title}
@@ -117,6 +166,11 @@ const AdminForm = () => {
         register={register}
       />
       <div className='text-end'>
+        {blogToEdit && (
+          <button className='btn' type='button' onClick={handleCancelEdit}>
+            Cancelar edición
+          </button>
+        )}
         <button className='btn btn-danger' type='submit'>
           Guardar
         </button>

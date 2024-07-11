@@ -4,9 +4,12 @@ import { toast } from 'sonner';
 import Swal from 'sweetalert2';
 
 import { deleteBlogFn } from '../../api/blogs';
+import { useBlog } from '../../stores/useBlog';
 
 const AdminTableRow = (props) => {
   const { blog, index } = props;
+
+  const { setBlogToEdit } = useBlog();
 
   // ---------------------------------------------
   // RQ
@@ -36,7 +39,7 @@ const AdminTableRow = (props) => {
   // ---------------------------------------------
 
   const handleEdit = () => {
-    console.log('Edit', blog.id);
+    setBlogToEdit(blog);
   };
 
   const handleDelete = async () => {
