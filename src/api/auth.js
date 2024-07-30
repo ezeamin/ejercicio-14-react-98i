@@ -43,7 +43,6 @@ export const postRegisterFn = async (data) => {
       lastname: data.lastname,
       username: data.username,
       password: data.password,
-      isAdmin: false,
     }),
   });
 
@@ -51,12 +50,11 @@ export const postRegisterFn = async (data) => {
     throw new Error('Ocurrió un error guardando el usuario');
   }
 
-  // TODO: Ver tema token en registro
-
-  return {
-    firstname: data.firstname,
-    lastname: data.lastname,
+  // Token en registro
+  const userData = await postLoginFn({
     username: data.username,
-    isAdmin: false,
-  };
+    password: data.password,
+  });
+
+  return userData;
 };

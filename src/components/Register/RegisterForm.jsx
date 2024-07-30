@@ -157,15 +157,15 @@ const RegisterForm = () => {
             },
             minLength: {
               value: 8,
-              message: 'La contraseña debe tener al menos 8 caracteres',
+              message: 'Revisar',
             },
             maxLength: 15,
             pattern: {
               value:
                 /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/,
-              message:
-                'La contraseña debe tener una minúscula, una mayúscula, un dígito, y un caracter especial, entre 8 y 15 caracteres',
+              message: 'Revisar',
             },
+            // TODO: Revisar que las contraseñas coincidan
             // validate: (value) => {
             //     return value === data.password
             // }
