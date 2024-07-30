@@ -161,6 +161,10 @@ const AdminForm = () => {
             value: 5,
             message: 'El contenido debe tener al menos 5 caracteres',
           },
+          maxLength: {
+            value: 500,
+            message: 'El contenido debe tener como mucho 500 caracteres',
+          },
         }}
         placeholder='Escribi acá el contenido de la entrada del blog'
         register={register}
